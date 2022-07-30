@@ -1,24 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z3n-VE-4YO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--counter-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CounterViewController" id="BYZ-38-t0r" customClass="CounterViewController" customModule="Core_Animation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ax-5q-uKh">
+                                <rect key="frame" x="127" y="709" width="160" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Til-d4-5rM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="XcZ-q2-aVs"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Random">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="showRandom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sCx-i8-Lzx"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2BW-Nt-lMd">
+                                <rect key="frame" x="83" y="207" width="248" height="248.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgm-AX-3li">
+                                        <rect key="frame" x="99.5" y="79" width="49.5" height="90"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="75"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Lgm-AX-3li" firstAttribute="centerX" secondItem="2BW-Nt-lMd" secondAttribute="centerX" id="dA8-aa-74g"/>
+                                    <constraint firstAttribute="width" secondItem="2BW-Nt-lMd" secondAttribute="height" multiplier="1:1" id="w9Y-DP-o0X"/>
+                                    <constraint firstItem="Lgm-AX-3li" firstAttribute="centerY" secondItem="2BW-Nt-lMd" secondAttribute="centerY" id="yzn-hJ-0Ad"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Ax-5q-uKh" secondAttribute="bottom" constant="60" id="3lb-vK-cQj"/>
+                            <constraint firstItem="2BW-Nt-lMd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="163" id="LXh-fZ-f3P"/>
+                            <constraint firstItem="2BW-Nt-lMd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="MPC-Xx-04i"/>
+                            <constraint firstItem="2BW-Nt-lMd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c5q-KG-jtG"/>
+                            <constraint firstItem="1Ax-5q-uKh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iZB-Kk-Ex1"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="counter" image="barometer" catalog="system" id="luJ-4J-1xD"/>
+                    <connections>
+                        <outlet property="progressLabel" destination="Lgm-AX-3li" id="O9p-Ch-BXW"/>
+                        <outlet property="progressView" destination="2BW-Nt-lMd" id="FXJ-mE-TWa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="736" y="94"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Z4x-f8-vr7">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Z3n-VE-4YO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FfX-uS-Ei1">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="wfv-up-nEF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0oS-v9-WCB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-107" y="94"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="barometer" catalog="system" width="128" height="121"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

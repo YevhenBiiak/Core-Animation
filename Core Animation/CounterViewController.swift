@@ -93,7 +93,6 @@ class CounterViewController: UIViewController {
     }
     
     @IBAction func showRandom(_ sender: UIButton) {
-        progressLayer?.removeAllAnimations()
         currentRandomValue = getRandomValue()
         
         let strokeEndAnimation = CABasicAnimation(keyPath: #keyPath(CAShapeLayer.strokeEnd))
@@ -120,6 +119,7 @@ class CounterViewController: UIViewController {
         
         if displayLink == nil {
             displayLink = CADisplayLink(target: self, selector: #selector(updateHandler))
+            // set mode to .common don't stops timer when user drags scrollView
             displayLink?.add(to: .main, forMode: .common)
         } else {
             displayLink?.isPaused = false
@@ -127,8 +127,8 @@ class CounterViewController: UIViewController {
     }
     
     @objc private func updateHandler() {
-        guard let endTime = endTime,
-              let startTime = startTime
+        guard let startTime = startTime,
+              let endTime = endTime
         else { return }
         
         if CACurrentMediaTime() >= endTime {

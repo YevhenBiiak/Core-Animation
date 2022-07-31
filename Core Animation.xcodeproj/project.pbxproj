@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		204AF3ABCEB1DF26224247AA /* Pods_Core_Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074DC18B5D4B8755C52C65F6 /* Pods_Core_Animation.framework */; };
+		5701B6CA28957DB50045F1A4 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701B6C928957DB50045F1A4 /* LineChartViewController.swift */; };
 		57926237289528AD005C69EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57926236289528AD005C69EE /* AppDelegate.swift */; };
 		57926239289528AD005C69EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57926238289528AD005C69EE /* SceneDelegate.swift */; };
 		5792623B289528AD005C69EE /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5792623A289528AD005C69EE /* CounterViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		074DC18B5D4B8755C52C65F6 /* Pods_Core_Animation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core_Animation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5CDCB59CCD44F297925F45 /* Pods-Core Animation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core Animation.release.xcconfig"; path = "Target Support Files/Pods-Core Animation/Pods-Core Animation.release.xcconfig"; sourceTree = "<group>"; };
+		5701B6C928957DB50045F1A4 /* LineChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartViewController.swift; sourceTree = "<group>"; };
 		57926233289528AD005C69EE /* Core Animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Animation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57926236289528AD005C69EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57926238289528AD005C69EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				57926236289528AD005C69EE /* AppDelegate.swift */,
 				57926238289528AD005C69EE /* SceneDelegate.swift */,
 				5792623A289528AD005C69EE /* CounterViewController.swift */,
+				5701B6C928957DB50045F1A4 /* LineChartViewController.swift */,
 				5792623C289528AD005C69EE /* Main.storyboard */,
 				5792623F289528AE005C69EE /* Assets.xcassets */,
 				57926241289528AE005C69EE /* LaunchScreen.storyboard */,
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5792623B289528AD005C69EE /* CounterViewController.swift in Sources */,
+				5701B6CA28957DB50045F1A4 /* LineChartViewController.swift in Sources */,
 				57926237289528AD005C69EE /* AppDelegate.swift in Sources */,
 				57926239289528AD005C69EE /* SceneDelegate.swift in Sources */,
 			);

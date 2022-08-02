@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		204AF3ABCEB1DF26224247AA /* Pods_Core_Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074DC18B5D4B8755C52C65F6 /* Pods_Core_Animation.framework */; };
 		5701B6CA28957DB50045F1A4 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701B6C928957DB50045F1A4 /* LineChartViewController.swift */; };
+		5701B6CC2896A1110045F1A4 /* RadialChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701B6CB2896A1100045F1A4 /* RadialChartViewController.swift */; };
+		5701B6D32896A2030045F1A4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701B6D22896A2030045F1A4 /* Player.swift */; };
+		5701B6D9289704980045F1A4 /* CGRect + center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701B6D8289704980045F1A4 /* CGRect + center.swift */; };
 		57926237289528AD005C69EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57926236289528AD005C69EE /* AppDelegate.swift */; };
 		57926239289528AD005C69EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57926238289528AD005C69EE /* SceneDelegate.swift */; };
 		5792623B289528AD005C69EE /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5792623A289528AD005C69EE /* CounterViewController.swift */; };
@@ -21,6 +24,9 @@
 		074DC18B5D4B8755C52C65F6 /* Pods_Core_Animation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core_Animation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5CDCB59CCD44F297925F45 /* Pods-Core Animation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core Animation.release.xcconfig"; path = "Target Support Files/Pods-Core Animation/Pods-Core Animation.release.xcconfig"; sourceTree = "<group>"; };
 		5701B6C928957DB50045F1A4 /* LineChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartViewController.swift; sourceTree = "<group>"; };
+		5701B6CB2896A1100045F1A4 /* RadialChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialChartViewController.swift; sourceTree = "<group>"; };
+		5701B6D22896A2030045F1A4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		5701B6D8289704980045F1A4 /* CGRect + center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect + center.swift"; sourceTree = "<group>"; };
 		57926233289528AD005C69EE /* Core Animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Animation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57926236289528AD005C69EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57926238289528AD005C69EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +50,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5701B6CD2896A1B30045F1A4 /* CounterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5792623A289528AD005C69EE /* CounterViewController.swift */,
+			);
+			path = CounterScreen;
+			sourceTree = "<group>";
+		};
+		5701B6CE2896A1C00045F1A4 /* LineChartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5701B6C928957DB50045F1A4 /* LineChartViewController.swift */,
+			);
+			path = LineChartScreen;
+			sourceTree = "<group>";
+		};
+		5701B6CF2896A1D20045F1A4 /* RadialChartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5701B6D12896A1F10045F1A4 /* Models */,
+				5701B6D02896A1E40045F1A4 /* ViewControllers */,
+			);
+			path = RadialChartScreen;
+			sourceTree = "<group>";
+		};
+		5701B6D02896A1E40045F1A4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5701B6CB2896A1100045F1A4 /* RadialChartViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5701B6D12896A1F10045F1A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5701B6D22896A2030045F1A4 /* Player.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5701B6D4289703EE0045F1A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5701B6D8289704980045F1A4 /* CGRect + center.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5701B6D5289704000045F1A4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5792623C289528AD005C69EE /* Main.storyboard */,
+				57926241289528AE005C69EE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5701B6D6289704130045F1A4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				57926236289528AD005C69EE /* AppDelegate.swift */,
+				57926238289528AD005C69EE /* SceneDelegate.swift */,
+				57926244289528AE005C69EE /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		5701B6D7289704200045F1A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5792623F289528AE005C69EE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		5792622A289528AD005C69EE = {
 			isa = PBXGroup;
 			children = (
@@ -65,14 +147,13 @@
 		57926235289528AD005C69EE /* Core Animation */ = {
 			isa = PBXGroup;
 			children = (
-				57926236289528AD005C69EE /* AppDelegate.swift */,
-				57926238289528AD005C69EE /* SceneDelegate.swift */,
-				5792623A289528AD005C69EE /* CounterViewController.swift */,
-				5701B6C928957DB50045F1A4 /* LineChartViewController.swift */,
-				5792623C289528AD005C69EE /* Main.storyboard */,
-				5792623F289528AE005C69EE /* Assets.xcassets */,
-				57926241289528AE005C69EE /* LaunchScreen.storyboard */,
-				57926244289528AE005C69EE /* Info.plist */,
+				5701B6D6289704130045F1A4 /* SupportingFiles */,
+				5701B6CD2896A1B30045F1A4 /* CounterScreen */,
+				5701B6CE2896A1C00045F1A4 /* LineChartScreen */,
+				5701B6CF2896A1D20045F1A4 /* RadialChartScreen */,
+				5701B6D4289703EE0045F1A4 /* Extensions */,
+				5701B6D5289704000045F1A4 /* Storyboards */,
+				5701B6D7289704200045F1A4 /* Resources */,
 			);
 			path = "Core Animation";
 			sourceTree = "<group>";
@@ -210,8 +291,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5792623B289528AD005C69EE /* CounterViewController.swift in Sources */,
+				5701B6CC2896A1110045F1A4 /* RadialChartViewController.swift in Sources */,
 				5701B6CA28957DB50045F1A4 /* LineChartViewController.swift in Sources */,
 				57926237289528AD005C69EE /* AppDelegate.swift in Sources */,
+				5701B6D32896A2030045F1A4 /* Player.swift in Sources */,
+				5701B6D9289704980045F1A4 /* CGRect + center.swift in Sources */,
 				57926239289528AD005C69EE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,7 +446,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P3BYVBK57Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Core Animation/Info.plist";
+				INFOPLIST_FILE = "Core Animation/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -391,7 +475,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P3BYVBK57Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Core Animation/Info.plist";
+				INFOPLIST_FILE = "Core Animation/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

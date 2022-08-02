@@ -31,42 +31,46 @@ class LineChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chartLayer = generateChartLayer()
+        chartLayer = configureChartLayer()
         chartViewContainer.layer.addSublayer(chartLayer)
         
-        axesLayer = generateAxesLayer()
+        axesLayer = configureAxesLayer()
         chartViewContainer.layer.addSublayer(axesLayer)
         
-        horizontalGridLayer = generateHorizontalGridLayer()
+        horizontalGridLayer = configureHorizontalGridLayer()
         chartViewContainer.layer.insertSublayer(horizontalGridLayer, below: chartLayer)
         
-        verticalGridLayer = generateVerticalGridLayer()
+        verticalGridLayer = configureVerticalGridLayer()
         chartViewContainer.layer.insertSublayer(verticalGridLayer, below: chartLayer)
+        
+        currentChart = getRandomChart(count: 200)
     }
     
     override func viewDidLayoutSubviews() {
-        axesLayer.path = generateAxesLayerPath()
+        axesLayer.path = configureAxesLayerPath()
         
         guard let gridItemH = horizontalGridLayer.sublayers?.first as? CAShapeLayer,
               let gridItemV = verticalGridLayer.sublayers?.first as? CAShapeLayer
         else { return }
         
-        gridItemH.path = generateHorizontalGridItem()
-        gridItemV.path = generateVerticalGridItem()
+        gridItemH.path = configureHorizontalGridItem()
+        gridItemV.path = configureVerticalGridItem()
         
-        rebuildGrid()
+        buildGrid()
         
         updateChartView(with: currentChart)
     }
+    
+    // MARK: - Actions
     
     @IBAction func showRandomChart(_ sender: UIButton) {
         currentChart = getRandomChart(count: 200)
         updateChartView(with: currentChart)
     }
     
-    // MARK: private helper methods
+    // MARK: - Private helper methods
     
-    private func generateChartLayer() -> CAShapeLayer {
+    private func configureChartLayer() -> CAShapeLayer {
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.clear.cgColor
         layer.strokeColor = UIColor.systemCyan.cgColor
@@ -80,16 +84,16 @@ class LineChartViewController: UIViewController {
         return layer
     }
     
-    private func generateAxesLayer() -> CAShapeLayer {
+    private func configureAxesLayer() -> CAShapeLayer {
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.clear.cgColor
         layer.strokeColor = UIColor.systemGray2.cgColor
         layer.lineWidth = 1
-        layer.path = generateAxesLayerPath()
+        layer.path = configureAxesLayerPath()
         return layer
     }
     
-    private func generateAxesLayerPath() -> CGPath {
+    private func configureAxesLayerPath() -> CGPath {
         let path = UIBezierPath()
         path.move(to: CGPoint(x: chartPadding, y: chartPadding))
         path.addLine(to: CGPoint(x: chartPadding, y: chartPadding + availableHeight))
@@ -97,45 +101,45 @@ class LineChartViewController: UIViewController {
         return path.cgPath
     }
     
-    private func generateHorizontalGridLayer() -> CAReplicatorLayer {
+    private func configureHorizontalGridLayer() -> CAReplicatorLayer {
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.clear.cgColor
         layer.strokeColor = UIColor.systemGray4.cgColor
         layer.lineWidth = 0.2
-        layer.path = generateHorizontalGridItem()
+        layer.path = configureHorizontalGridItem()
         
         let replicatorLayer = CAReplicatorLayer()
         replicatorLayer.addSublayer(layer)
         return replicatorLayer
     }
     
-    private func generateHorizontalGridItem() -> CGPath {
+    private func configureHorizontalGridItem() -> CGPath {
         let path = UIBezierPath()
         path.move(to: CGPoint(x: chartPadding, y: chartPadding + availableHeight - gridStep))
         path.addLine(to: CGPoint(x: chartPadding + availableWidth, y: chartPadding + availableHeight - gridStep))
         return path.cgPath
     }
     
-    private func generateVerticalGridLayer() -> CAReplicatorLayer {
+    private func configureVerticalGridLayer() -> CAReplicatorLayer {
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.clear.cgColor
         layer.strokeColor = UIColor.systemGray4.cgColor
         layer.lineWidth = 0.2
-        layer.path = generateVerticalGridItem()
+        layer.path = configureVerticalGridItem()
         
         let replicatorLayer = CAReplicatorLayer()
         replicatorLayer.addSublayer(layer)
         return replicatorLayer
     }
     
-    private func generateVerticalGridItem() -> CGPath {
+    private func configureVerticalGridItem() -> CGPath {
         let path = UIBezierPath()
         path.move(to: CGPoint(x: chartPadding + gridStep, y: chartPadding))
         path.addLine(to: CGPoint(x: chartPadding + gridStep, y: chartPadding + availableHeight))
         return path.cgPath
     }
     
-    private func rebuildGrid() {
+    private func buildGrid() {
         // ajust horizontal grid
         let instanceCountH = Int(availableHeight / gridStep)
         horizontalGridLayer.instanceCount = instanceCountH

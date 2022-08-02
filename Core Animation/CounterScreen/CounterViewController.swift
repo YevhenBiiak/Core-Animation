@@ -84,7 +84,7 @@ class CounterViewController: UIViewController {
     
     private func configureProgressLayerPath() -> CGPath {
         return UIBezierPath(
-            arcCenter: CGPoint(x: progressView.bounds.height / 2, y: progressView.bounds.height / 2),
+            arcCenter: progressView.bounds.center,
             radius: progressView.bounds.height / 2,
             startAngle: 3 * .pi / 4,
             endAngle: .pi / 4,

@@ -20,6 +20,8 @@ class RadialChartViewController: UIViewController {
     
     @IBOutlet weak var chartContainerView: UIView!
     
+    @IBOutlet var controlButtons: [UIButton]!
+    
     @IBOutlet weak var `switch`: UISwitch!
     
     // MARK: - Properties
@@ -34,6 +36,8 @@ class RadialChartViewController: UIViewController {
     var players = Player.getTestPlayers()
     var currentPlayer: Player? { players.first }
     
+    // MARK: - Life cycle and override methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,7 +55,13 @@ class RadialChartViewController: UIViewController {
         
         axesLayer.frame = chartContainerView.bounds
         
-        showCharacteristics(forPlayer: currentPlayer)
+        if controlButtons.allSatisfy({ !$0.isHighlighted }) {
+            showCharacteristics(forPlayer: currentPlayer)
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     // MARK: - Actions

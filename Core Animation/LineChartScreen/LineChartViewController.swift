@@ -11,6 +11,9 @@ class LineChartViewController: UIViewController {
 
     @IBOutlet weak var `switch`: UISwitch!
     @IBOutlet weak var chartViewContainer: UIView!
+    @IBOutlet weak var randomChartButton: UIButton!
+    
+    // MARK: - Properties
     
     let chartPadding: CGFloat = 20
     let gridStep: CGFloat = 30
@@ -27,6 +30,8 @@ class LineChartViewController: UIViewController {
     var verticalGridLayer: CAReplicatorLayer!
     
     var currentChart: [Int]?
+    
+    // MARK: - Life cycle and override methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +63,13 @@ class LineChartViewController: UIViewController {
         
         buildGrid()
         
-        updateChartView(with: currentChart)
+        if !randomChartButton.isHighlighted {
+            updateChartView(with: currentChart)
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     // MARK: - Actions

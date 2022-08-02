@@ -12,12 +12,14 @@
 		5701B6CC2896A1110045F1A4 /* RadialChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701B6CB2896A1100045F1A4 /* RadialChartViewController.swift */; };
 		5701B6D32896A2030045F1A4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701B6D22896A2030045F1A4 /* Player.swift */; };
 		5701B6D9289704980045F1A4 /* CGRect + center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701B6D8289704980045F1A4 /* CGRect + center.swift */; };
+		576CB58A289937F1007E8DEE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CB589289937F1007E8DEE /* CanvasView.swift */; };
 		57926237289528AD005C69EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57926236289528AD005C69EE /* AppDelegate.swift */; };
 		57926239289528AD005C69EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57926238289528AD005C69EE /* SceneDelegate.swift */; };
 		5792623B289528AD005C69EE /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5792623A289528AD005C69EE /* CounterViewController.swift */; };
 		5792623E289528AD005C69EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5792623C289528AD005C69EE /* Main.storyboard */; };
 		57926240289528AE005C69EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5792623F289528AE005C69EE /* Assets.xcassets */; };
 		57926243289528AE005C69EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57926241289528AE005C69EE /* LaunchScreen.storyboard */; };
+		5797507E2899154B0038E444 /* SparkParticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797507D2899154B0038E444 /* SparkParticlesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,7 @@
 		5701B6CB2896A1100045F1A4 /* RadialChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialChartViewController.swift; sourceTree = "<group>"; };
 		5701B6D22896A2030045F1A4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5701B6D8289704980045F1A4 /* CGRect + center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect + center.swift"; sourceTree = "<group>"; };
+		576CB589289937F1007E8DEE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		57926233289528AD005C69EE /* Core Animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Animation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57926236289528AD005C69EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57926238289528AD005C69EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 		5792623F289528AE005C69EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57926242289528AE005C69EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57926244289528AE005C69EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5797507D2899154B0038E444 /* SparkParticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkParticlesViewController.swift; sourceTree = "<group>"; };
 		ACB3EE1E739B43F8B8B76523 /* Pods-Core Animation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core Animation.debug.xcconfig"; path = "Target Support Files/Pods-Core Animation/Pods-Core Animation.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,11 +155,21 @@
 				5701B6CD2896A1B30045F1A4 /* CounterScreen */,
 				5701B6CE2896A1C00045F1A4 /* LineChartScreen */,
 				5701B6CF2896A1D20045F1A4 /* RadialChartScreen */,
+				5797507C289915320038E444 /* SparkScreen */,
 				5701B6D4289703EE0045F1A4 /* Extensions */,
 				5701B6D5289704000045F1A4 /* Storyboards */,
 				5701B6D7289704200045F1A4 /* Resources */,
 			);
 			path = "Core Animation";
+			sourceTree = "<group>";
+		};
+		5797507C289915320038E444 /* SparkScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5797507D2899154B0038E444 /* SparkParticlesViewController.swift */,
+				576CB589289937F1007E8DEE /* CanvasView.swift */,
+			);
+			path = SparkScreen;
 			sourceTree = "<group>";
 		};
 		8AE8C647CE995613986F39FB /* Frameworks */ = {
@@ -293,7 +307,9 @@
 				5792623B289528AD005C69EE /* CounterViewController.swift in Sources */,
 				5701B6CC2896A1110045F1A4 /* RadialChartViewController.swift in Sources */,
 				5701B6CA28957DB50045F1A4 /* LineChartViewController.swift in Sources */,
+				576CB58A289937F1007E8DEE /* CanvasView.swift in Sources */,
 				57926237289528AD005C69EE /* AppDelegate.swift in Sources */,
+				5797507E2899154B0038E444 /* SparkParticlesViewController.swift in Sources */,
 				5701B6D32896A2030045F1A4 /* Player.swift in Sources */,
 				5701B6D9289704980045F1A4 /* CGRect + center.swift in Sources */,
 				57926239289528AD005C69EE /* SceneDelegate.swift in Sources */,

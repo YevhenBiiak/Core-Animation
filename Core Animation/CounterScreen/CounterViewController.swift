@@ -12,6 +12,8 @@ class CounterViewController: UIViewController {
     @IBOutlet weak var progressView: UIView!
     @IBOutlet weak var progressLabel: UILabel!
     
+    // MARK: - Properties
+    
     var backgroundLayer: CAShapeLayer?
     var progressLayer: CAShapeLayer?
     
@@ -26,6 +28,8 @@ class CounterViewController: UIViewController {
     var getRandomValue: () -> CGFloat = {
         CGFloat(Double.random(in: 0...1))
     }
+    
+    // MARK: - Life cycle and override methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,55 +46,16 @@ class CounterViewController: UIViewController {
         progressLayer?.path = configureProgressLayerPath()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     deinit {
         displayLink?.invalidate()
         displayLink = nil
     }
     
-    private func configureBackgroundLayer() -> CAShapeLayer {
-        let backgroundLayer = CAShapeLayer()
-        
-        backgroundLayer.path = configureBackgroundLayerPath()
-        backgroundLayer.strokeColor = UIColor.lightGray.cgColor
-        backgroundLayer.fillColor = UIColor.clear.cgColor
-        backgroundLayer.lineWidth = 10
-        backgroundLayer.lineCap = .round
-        
-        return backgroundLayer
-    }
-    
-    private func configureBackgroundLayerPath() -> CGPath {
-        return UIBezierPath(
-            arcCenter: CGPoint(x: progressView.bounds.height / 2, y: progressView.bounds.height / 2),
-            radius: progressView.bounds.height / 2,
-            startAngle: 3 * .pi / 4,
-            endAngle: .pi / 4,
-            clockwise: true
-        ).cgPath
-    }
-    
-    private func configureProgressLayer() -> CAShapeLayer {
-        let progressLayer = CAShapeLayer()
-        
-        progressLayer.path = configureProgressLayerPath()
-        progressLayer.strokeColor = nil
-        progressLayer.fillColor = UIColor.clear.cgColor
-        progressLayer.lineWidth = 10
-        progressLayer.lineCap = .round
-        progressLayer.strokeEnd = 0
-        
-        return progressLayer
-    }
-    
-    private func configureProgressLayerPath() -> CGPath {
-        return UIBezierPath(
-            arcCenter: progressView.bounds.center,
-            radius: progressView.bounds.height / 2,
-            startAngle: 3 * .pi / 4,
-            endAngle: .pi / 4,
-            clockwise: true
-        ).cgPath
-    }
+    // MARK: - Actions
     
     @IBAction func showRandom(_ sender: UIButton) {
         currentRandomValue = getRandomValue()
@@ -140,5 +105,52 @@ class CounterViewController: UIViewController {
             let percentage = elapsedTime / duration
             progressLabel.text = String(format: "%.0f", percentage * currentRandomValue * 100)
         }
+    }
+    
+    // MARK: - Helper methods
+    
+    private func configureBackgroundLayer() -> CAShapeLayer {
+        let backgroundLayer = CAShapeLayer()
+        
+        backgroundLayer.path = configureBackgroundLayerPath()
+        backgroundLayer.strokeColor = UIColor.lightGray.cgColor
+        backgroundLayer.fillColor = UIColor.clear.cgColor
+        backgroundLayer.lineWidth = 10
+        backgroundLayer.lineCap = .round
+        
+        return backgroundLayer
+    }
+    
+    private func configureBackgroundLayerPath() -> CGPath {
+        return UIBezierPath(
+            arcCenter: CGPoint(x: progressView.bounds.height / 2, y: progressView.bounds.height / 2),
+            radius: progressView.bounds.height / 2,
+            startAngle: 3 * .pi / 4,
+            endAngle: .pi / 4,
+            clockwise: true
+        ).cgPath
+    }
+    
+    private func configureProgressLayer() -> CAShapeLayer {
+        let progressLayer = CAShapeLayer()
+        
+        progressLayer.path = configureProgressLayerPath()
+        progressLayer.strokeColor = nil
+        progressLayer.fillColor = UIColor.clear.cgColor
+        progressLayer.lineWidth = 10
+        progressLayer.lineCap = .round
+        progressLayer.strokeEnd = 0
+        
+        return progressLayer
+    }
+    
+    private func configureProgressLayerPath() -> CGPath {
+        return UIBezierPath(
+            arcCenter: progressView.bounds.center,
+            radius: progressView.bounds.height / 2,
+            startAngle: 3 * .pi / 4,
+            endAngle: .pi / 4,
+            clockwise: true
+        ).cgPath
     }
 }

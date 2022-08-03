@@ -184,9 +184,9 @@ class RadialChartViewController: UIViewController {
     
     private func calculatePath(forPlayer player: Player) -> CGPath {
         let zero = chartContainerView.bounds.center
-        let alpha = 360.0 / 6.0
-        let sinAlpha = sin(alpha * .pi / 180)
-        let cosAlpha = cos(alpha * .pi / 180)
+        let alpha: CGFloat = 360.0 / 6.0
+        let sinAlpha = sin(alpha.radians)
+        let cosAlpha = cos(alpha.radians)
         let scaleCoeff = (zero.x - containerPadding) / 100
         
         let characteristics = [player.pace,

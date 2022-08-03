@@ -54,7 +54,8 @@ extension SparkParticlesViewController: CanvasViewDelegate {
         cell.velocity = 100
         cell.velocityRange = 200
         cell.emissionRange = .pi / 8
-        cell.emissionLongitude = 2 * .pi * point.angle(to: previousPoint) / 360
+        // emission angle
+        cell.emissionLongitude = point.angleDegrees(to: previousPoint).radians
 
         //add particle template to emitter
         emitter.emitterCells = [cell]

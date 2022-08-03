@@ -610,6 +610,22 @@
             </objects>
             <point key="canvasLocation" x="2805.7971014492755" y="93.75"/>
         </scene>
+        <!--Stretch Ball-->
+        <scene sceneID="TMG-cI-nLA">
+            <objects>
+                <viewController storyboardIdentifier="StretchBallViewController" id="7fi-5D-YXW" customClass="StretchBallViewController" customModule="Core_Animation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ObS-JM-3Kw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sJZ-KC-aKI"/>
+                        <color key="backgroundColor" white="0.050000000000000003" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stretch Ball" image="circle.fill" catalog="system" id="30b-3S-K0S"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="43f-px-kIa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3497" y="94"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Z4x-f8-vr7">
             <objects>
@@ -625,6 +641,7 @@
                         <segue destination="edv-On-yn6" kind="relationship" relationship="viewControllers" id="BdV-WA-m3R"/>
                         <segue destination="o4W-pN-CVq" kind="relationship" relationship="viewControllers" id="b9c-cf-6xa"/>
                         <segue destination="9ds-D9-CHh" kind="relationship" relationship="viewControllers" id="6kF-Zb-HOv"/>
+                        <segue destination="7fi-5D-YXW" kind="relationship" relationship="viewControllers" id="kf1-nE-lvK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oS-v9-WCB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -636,6 +653,7 @@
         <image name="barometer" catalog="system" width="128" height="121"/>
         <image name="chart.pie" catalog="system" width="128" height="121"/>
         <image name="chart.xyaxis.line" catalog="system" width="128" height="101"/>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="hand.point.up.braille" catalog="system" width="98" height="128"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

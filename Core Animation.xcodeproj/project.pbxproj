@@ -21,7 +21,6 @@
 		57926243289528AE005C69EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57926241289528AE005C69EE /* LaunchScreen.storyboard */; };
 		5797507E2899154B0038E444 /* SparkParticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797507D2899154B0038E444 /* SparkParticlesViewController.swift */; };
 		57FEA3EA2899A34E001EE559 /* StretchBallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEA3E92899A34E001EE559 /* StretchBallViewController.swift */; };
-		57FEA3EC2899A6B6001EE559 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEA3EB2899A6B6001EE559 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +41,6 @@
 		57926244289528AE005C69EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5797507D2899154B0038E444 /* SparkParticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkParticlesViewController.swift; sourceTree = "<group>"; };
 		57FEA3E92899A34E001EE559 /* StretchBallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchBallViewController.swift; sourceTree = "<group>"; };
-		57FEA3EB2899A6B6001EE559 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		ACB3EE1E739B43F8B8B76523 /* Pods-Core Animation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core Animation.debug.xcconfig"; path = "Target Support Files/Pods-Core Animation/Pods-Core Animation.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				57FEA3E92899A34E001EE559 /* StretchBallViewController.swift */,
-				57FEA3EB2899A6B6001EE559 /* File.swift */,
 			);
 			path = StretchBallScreen;
 			sourceTree = "<group>";
@@ -327,7 +324,6 @@
 				5797507E2899154B0038E444 /* SparkParticlesViewController.swift in Sources */,
 				5701B6D32896A2030045F1A4 /* Player.swift in Sources */,
 				5701B6D9289704980045F1A4 /* CGRect CGPoint.swift in Sources */,
-				57FEA3EC2899A6B6001EE559 /* File.swift in Sources */,
 				57926239289528AD005C69EE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

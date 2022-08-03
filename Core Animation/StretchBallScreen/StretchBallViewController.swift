@@ -12,7 +12,7 @@ class StretchBallViewController: UIViewController {
     var ballLayer: CAShapeLayer!
     
     var center: CGPoint { view.bounds.center }
-    var radius: CGFloat { view.bounds.width * 0.5 / 2 }
+    var radius: CGFloat { min(view.bounds.width, view.bounds.height) * 0.5 / 2 }
     
     // MARK: - Life cycle and override methods
 
@@ -23,14 +23,20 @@ class StretchBallViewController: UIViewController {
         view.addGestureRecognizer(panGesture)
         
         ballLayer = configureBallLayer()
-        ballLayer.path = configureBallLayerPath()
         view.layer.addSublayer(ballLayer)
     }
     
     override func viewDidLayoutSubviews() {
-//        ballLayer.frame = view.bounds
-//        ballLayer.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.width)
-//        ballLayer.path = configureBallLayerPath()
+        ballLayer.path = configureBallLayerPath()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        // remove sublayers
+        ballLayer.sublayers = nil
+        // reset transform
+        ballLayer.setAffineTransform(CGAffineTransform.identity)
+        // change frame
+        ballLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
     }
     
     // MARK: - Actions
@@ -42,7 +48,6 @@ class StretchBallViewController: UIViewController {
         }
         
         let point = sender.location(in: view)
-//        print(point)
         
         if sender.state == .ended {
             animateToStartPosition()
@@ -68,14 +73,12 @@ class StretchBallViewController: UIViewController {
     
     private func configureBallLayer() -> CAShapeLayer {
         let layer = CAShapeLayer()
-        layer.frame = view.bounds//CGRect(x: center.x - radius, y: center.y - radius, width: radius * 2, height: radius * 2)
+        layer.frame = view.bounds
         layer.fillColor = UIColor.systemPink.cgColor
         return layer
     }
     
     private func configureBallLayerPath(touchPoint: CGPoint? = nil) -> CGPath {
-        let center = ballLayer.bounds.center
-        
         var point0 = CGPoint(x: center.x + radius, y: center.y)
         let point1 = CGPoint(x: center.x, y: center.y + radius)
         let point2 = CGPoint(x: center.x - radius, y: center.y)

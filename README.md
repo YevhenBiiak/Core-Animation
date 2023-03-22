@@ -24,17 +24,19 @@
 
 ## Learned how to: 
 
-- draw circle and arc using CAShapeLayer and UIBezierPath
-- animate properties of CA classes using CABasicAnimation and CASpringAnimation
-- animate UILabel text content using CADisplayLink
-- replicate layers using CAReplicatorLayer with move and rotate transforms
-- create a CAEmitterLayer layer with CAEmitterCell and manage its properties
+- draw circle and arc using `CAShapeLayer` and `UIBezierPath`
+- animate properties of CoreAnimation classes using `CABasicAnimation` and `CASpringAnimation`
+- animate `UILabel` text content using `CADisplayLink`
+- replicate layers using `CAReplicatorLayer` with move and rotate transforms
+- create a `CAEmitterLayer` layer with `CAEmitterCell` and manage its properties
 
 ## Conclusion
 
-Using CABasicAnimation, I have come to the conclusion that the overlaid animation layer disappears after it is launched and does not affect the main layer. Additionally, the base layer can only contain one animation layer.
+Using `CABasicAnimation`, I have come to the conclusion that the overlaid animation layer disappears after it is launched and does not affect the main layer. Additionally, the base layer can only contain one animation layer.
 
-| Used CALayer classes | Additionally |
+## Used CoreAnimation Classes
+
+| CALayer classes | Additionally |
 --- | ---
 `CALayer` | `UIBezierPath`
 `CAShapeLayer` | `CABasicAnimation`
